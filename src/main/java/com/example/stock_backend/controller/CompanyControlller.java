@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.stock_backend.dto.PriceRequest;
 import com.example.stock_backend.model.Company;
-import com.example.stock_backend.service.CompanyService; 
+import com.example.stock_backend.service.CompanyService;
+ 
 
 @RestController
 public class CompanyControlller {
@@ -21,6 +22,11 @@ public class CompanyControlller {
     @Autowired 
     private CompanyService cs; 
 
+    @GetMapping("/company/test")
+    public String getMethodName() {
+        return "backend is working";
+    }
+    
     @GetMapping("/company")
     public ResponseEntity<List<Company>> getAllCompanies(){
         return cs.getAllCompanies(); 
