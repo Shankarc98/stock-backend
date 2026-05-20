@@ -1,7 +1,6 @@
 package com.example.stock_backend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +12,6 @@ import com.example.stock_backend.service.TradeService;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
 public class TradeController {
     
     @Autowired TradeService ts; 

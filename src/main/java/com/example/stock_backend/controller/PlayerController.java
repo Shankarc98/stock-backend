@@ -22,7 +22,6 @@ import com.example.stock_backend.repository.PlayerRepository;
 import com.example.stock_backend.service.PlayerService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
 public class PlayerController {         
 
     @Autowired 
