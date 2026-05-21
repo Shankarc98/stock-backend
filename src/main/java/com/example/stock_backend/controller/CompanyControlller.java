@@ -22,6 +22,11 @@ public class CompanyControlller {
     @Autowired 
     private CompanyService cs;    
     
+    @GetMapping("/env")
+    public String env() {
+        return System.getenv("MONGO_URI");
+    }
+    
     @GetMapping("/company")
     public ResponseEntity<List<Company>> getAllCompanies(){
         return cs.getAllCompanies(); 
