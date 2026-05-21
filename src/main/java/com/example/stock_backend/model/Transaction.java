@@ -15,4 +15,13 @@ public class Transaction {
     private int sharesTraded; 
     private double price; 
     private double totalMoney; 
+
+    public void setId(String id){
+        this.id = id;
+    }
+    public String getId(){
+        return id;
+    }
+
+
 }

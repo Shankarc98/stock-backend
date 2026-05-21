@@ -20,12 +20,7 @@ import com.example.stock_backend.service.CompanyService;
 public class CompanyControlller {
     
     @Autowired 
-    private CompanyService cs; 
-
-    @GetMapping("/company/test")
-    public String getMethodName() {
-        return "backend is working";
-    }
+    private CompanyService cs;    
     
     @GetMapping("/company")
     public ResponseEntity<List<Company>> getAllCompanies(){

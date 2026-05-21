@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import com.example.stock_backend.model.Holding;
 
 import lombok.Data; 
 
@@ -30,4 +31,9 @@ public class Player {
         new Holding("Chrono Motors", 0), new Holding("Ascend air", 0)            
     ));     
     private List<Transaction> transactions = new ArrayList<>(); 
+
+
+    public List<Transaction> getTransactions(){
+        return transactions;
+    }
 }

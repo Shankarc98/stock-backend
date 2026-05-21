@@ -8,4 +8,20 @@ public class StockUpdateRequest {
     private float price;  
     private String companyName; 
     private String companyId; 
+
+    public int getNumOfStocks(){
+        return numOfStocks;
+    }
+
+    public float getPrice(){
+        return price;
+    }
+
+    public String getCompanyName(){
+        return companyName;
+    }
+    
+    public String getCompanyId(){
+        return companyId; 
+    }
 }

@@ -22,7 +22,7 @@ public class CompanyService {
     public ResponseEntity<List<Company>> getAllCompanies(){
         return ResponseEntity.ok(cr.findAll());
     }
-    public Company updatePrice(String id, float price){
+    public Company updatePrice(String id, double price){
         Company c = cr.findById(id).orElse(null);
         double currentPrice = c.getPrice();
 

@@ -2,7 +2,10 @@ package com.example.stock_backend.dto;
 
 import lombok.Data; 
 
-@Data
 public class PriceRequest {
-    private float price;     
+    private double price;    
+    
+    public double getPrice() {
+        return price;
+    }
 }

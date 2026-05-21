@@ -5,4 +5,8 @@ import lombok.Data;
 @Data
 public class MoneyRequest {
     private int money; 
+
+    public int getMoney(){
+        return money;
+    }
 }
