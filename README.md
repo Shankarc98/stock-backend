@@ -1,4 +1,4 @@
-````md
+
 # Stock Backend API 
 
 This application serves as a backend server for the stock exchange app
@@ -94,4 +94,3 @@ Backend is deployed on Render
 
 ## Author 
 Shankar Narayan
-```` 
