@@ -33,8 +33,8 @@ React Frontend -> Spring Boot API -> MongoDB Atlas
 ## Example request 
 POST /player 
 
-{
-    "name: "Shankar",
+```{
+    "name": "Shankar",
     "password": "123",
     "money": 300000,
     "stocksHeld": [
@@ -52,18 +52,18 @@ POST /player
 
         }
     ]
-}
+}```
 
 PATCH /{id}/addTransaction
 
-{
+```{
  
     "trade": "BOUGHT",
-    "company": "Nuvanta Financial Core"
+    "company": "Nuvanta Financial Core",
     "sharesTraded": 435,
     "price": 27.98,
     "totalMoney": 531.67   
-}
+}```
 
 ## Environment variables
 MONGO_URI=mongodb+srv://shankarnarayan:<db_password>@cluster0.99ssduz.mongodb.net/?appName=Cluster0
