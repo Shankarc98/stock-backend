@@ -16,7 +16,8 @@ public class CorsConfig {
                 registry.addMapping("/**")
                         .allowedOrigins(
                             "http://localhost:5173",
-                            "https://stock-exchange-app-zeta.vercel.app"
+                            "https://stock-exchange-app-zeta.vercel.app",
+                            "https://stock-exchange-app-git-main-shankarnarayan1555-3920s-projects.vercel.app/"                            
                         )
                         .allowedMethods("*")
                         .allowedHeaders("*");
