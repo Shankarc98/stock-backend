@@ -36,4 +36,12 @@ public class Player {
     public List<Transaction> getTransactions(){
         return transactions;
     }
+
+    public double getMoney(){
+        return money;
+    }
+
+    public void setMoney(double money){
+        this.money = money;
+    }
 }

@@ -29,7 +29,7 @@ public class PlayerService {
         
     }
 
-    public Player updateMoney(String id, int money){
+    public Player updateMoney(String id, double money){
         Player p = pr.findById(id).orElse(null); 
 
         double currentMoney = p.getMoney();

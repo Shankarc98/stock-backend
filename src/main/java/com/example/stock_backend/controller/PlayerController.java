@@ -42,7 +42,7 @@ public class PlayerController {
         return ps.getAllPlayers(); 
     }
     
-    @GetMapping("player/{name}/name")
+    @GetMapping("/player/{name}/name")
     public ResponseEntity<Player> getByName(@PathVariable String name){
         Player p = ps.getByName(name); 
 
