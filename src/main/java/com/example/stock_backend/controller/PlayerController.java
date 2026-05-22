@@ -53,7 +53,7 @@ public class PlayerController {
         return ps.updateMoney(id, request.getMoney()); 
     }
     
-    @PatchMapping("/{id}/transaction")
+    @PatchMapping("/{id}/addTransaction")
     public ResponseEntity<Player> addTransaction(@PathVariable String id, @RequestBody Transaction t){
 
         Player p = pr.findById(id).orElseThrow();
