@@ -9,10 +9,14 @@ import lombok.NoArgsConstructor;
 
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class TradeResponse {
     private Player p;
     private Company c; 
+
+    public TradeResponse(Player p, Company c){
+        this.p = p; 
+        this.c = c; 
+    }
 
 }

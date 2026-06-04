@@ -35,5 +35,16 @@ public class Company {
     public void setPrice(double price){
         this.price = price;
     }
-
+    public void setChange(double price){
+        this.change = change; 
+    }
+    public void setDirection(int direction){
+        this.direction = direction;
+    }
+    public int getStocks(){
+        return stocks;
+    }
+    public void setStocks(int stocks){
+        this.stocks = stocks;
+    }
 }
