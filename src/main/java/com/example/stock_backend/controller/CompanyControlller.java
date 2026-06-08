@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.stock_backend.dto.MarketResponse;
 import com.example.stock_backend.dto.PriceRequest;
 import com.example.stock_backend.model.Company;
 import com.example.stock_backend.service.CompanyService;
@@ -28,7 +29,8 @@ public class CompanyControlller {
     }
     
     @GetMapping("/company")
-    public ResponseEntity<List<Company>> getAllCompanies(){
+    public ResponseEntity<MarketResponse> getAllCompanies(){
+        
         return cs.getAllCompanies(); 
     }
 

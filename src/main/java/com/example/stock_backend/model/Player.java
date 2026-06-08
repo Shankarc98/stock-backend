@@ -44,4 +44,8 @@ public class Player {
     public void setMoney(double money){
         this.money = money;
     }
+
+    public List<Holding> getStocksHeld(){
+        return stocksHeld; 
+    }
 }
