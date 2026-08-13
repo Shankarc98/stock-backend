@@ -32,6 +32,12 @@ public class Player {
     ));     
     private List<Transaction> transactions = new ArrayList<>(); 
 
+    public String getName(){
+        return name;
+    }
+    public String getPassword(){
+        return password;
+    }
 
     public List<Transaction> getTransactions(){
         return transactions;
@@ -47,5 +53,12 @@ public class Player {
 
     public List<Holding> getStocksHeld(){
         return stocksHeld; 
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+    public void setPassword(String password){
+        this.password = password;
     }
 }

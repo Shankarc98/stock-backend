@@ -1,8 +1,7 @@
 package com.example.stock_backend.service;
 
-import java.util.List;
+import java.util.Optional; 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.stock_backend.model.Company;
@@ -35,6 +34,14 @@ public class CompanyService {
         MarketResponse mr = new MarketResponse(cr.findAll(), time.getNextUpdateTime());
         return ResponseEntity.ok(mr);
         
+    }
+
+    public ResponseEntity<Company> getCompanyById(String id){
+        Optional<Company> result = cr.findById(id);
+
+        Company company = result.orElseThrow(); 
+
+        return ResponseEntity.ok(company);
     }
     public Company updatePrice(String id, double price){
         Company c = cr.findById(id).orElse(null);

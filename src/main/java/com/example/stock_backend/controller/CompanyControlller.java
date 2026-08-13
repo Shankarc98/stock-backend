@@ -34,6 +34,12 @@ public class CompanyControlller {
         return cs.getAllCompanies(); 
     }
 
+    @GetMapping("/company/{id}")
+    public ResponseEntity<Company> getCompanyById(@PathVariable String id){
+
+        return cs.getCompanyById(id);
+    }
+    
     @PostMapping("/company")
     public Company createCompany(@RequestBody Company c){
         return cs.createCompany(c); 

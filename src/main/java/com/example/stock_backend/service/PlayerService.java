@@ -2,19 +2,33 @@ package com.example.stock_backend.service;
 
 import java.util.List; 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import com.example.stock_backend.model.Player;
 import com.example.stock_backend.repository.PlayerRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Service 
 public class PlayerService {
     
-    @Autowired
-    private PlayerRepository pr; 
+    private final PlayerRepository pr; 
 
+    private final PasswordEncoder passwordEncoder; 
+
+    PlayerService(PlayerRepository pr, PasswordEncoder passwordEncoder){
+        this.pr = pr;
+        this.passwordEncoder = passwordEncoder;
+    }
+    
     public Player createPlayer(Player p){
+        
+        if(pr.existsByName(p.getName())){
+            throw new RuntimeException("Player already exists");
+        }
+
+        p.setPassword(passwordEncoder.encode(p.getPassword()));
+
         return pr.save(p);
     }
     

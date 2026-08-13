@@ -29,13 +29,6 @@ public class PlayerController {
     @Autowired
     private PlayerRepository pr; 
 
-    @PostMapping("/player")
-    public ResponseEntity<Player> createPlayer(@RequestBody Player p){
-         
-        Player newPlayer = ps.createPlayer(p);
-
-        return ResponseEntity.ok(newPlayer); 
-    }
     
     @GetMapping("/player")
     public List<Player> getAllPlayers(){
