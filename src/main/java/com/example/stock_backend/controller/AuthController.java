@@ -44,7 +44,7 @@ public class AuthController {
     public ResponseEntity<?> signup(@RequestBody SignupRequest request){
         Player player = new Player(); 
 
-        if(!playerRepository.existsByName(request.getName())){
+        if(playerRepository.existsByName(request.getName())){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Username already exists");
         }
         player.setName(request.getName());
