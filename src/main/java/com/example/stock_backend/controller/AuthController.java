@@ -58,12 +58,14 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request){
+        
         Authentication authentication = authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(
                 request.getName(), 
                 request.getPassword()
             )
         );
+
 
         String token = jwtService.generateToken(authentication.getName());
 
