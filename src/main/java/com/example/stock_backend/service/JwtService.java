@@ -40,7 +40,7 @@ public class JwtService {
         JwtClaimsSet claims = JwtClaimsSet.builder()
                     .subject(username)
                     .issuedAt(now)
-                    .expiresAt(now.plus(1, ChronoUnit.HOURS))
+                    .expiresAt(now.plus(24, ChronoUnit.HOURS))
                     .build();
 
         JwsHeader header = JwsHeader.with(MacAlgorithm.HS256).build();

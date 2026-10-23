@@ -22,3 +22,5 @@ build/
 HELP.md
 
 application-local.properties
+application-prod.properties
+application.properties
