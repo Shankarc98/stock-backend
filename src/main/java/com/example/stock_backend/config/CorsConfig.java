@@ -14,8 +14,11 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
 
                 registry.addMapping("/**")
-                        .allowedOrigins(
-                            "http://localhost:5173",
+                        .allowedOriginPatterns(
+                            "http://localhost",
+                            "http://localhost:*",
+                            "http://127.0.0.1",
+                            "http://127.0.0.1:*",
                             "https://stock-exchange-app-zeta.vercel.app",
                             "https://stock-exchange-app-git-main-shankarnarayan1555-3920s-projects.vercel.app"                            
                         )
