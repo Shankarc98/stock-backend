@@ -1,7 +1,7 @@
 package com.example.stock_backend.service;
 
 import java.time.Instant;
-import java.time.temporal.ChronoUnit;
+import java.time.Duration;
 import java.util.Base64;
 
 import javax.crypto.SecretKey;
@@ -21,6 +21,8 @@ import com.nimbusds.jose.jwk.source.ImmutableSecret;
 
 @Service
 public class JwtService {
+
+    static final Duration SESSION_DURATION = Duration.ofHours(24);
     
     private final JwtEncoder jwtEncoder; 
 
@@ -40,7 +42,7 @@ public class JwtService {
         JwtClaimsSet claims = JwtClaimsSet.builder()
                     .subject(username)
                     .issuedAt(now)
-                    .expiresAt(now.plus(24, ChronoUnit.HOURS))
+                    .expiresAt(now.plus(SESSION_DURATION))
                     .build();
 
         JwsHeader header = JwsHeader.with(MacAlgorithm.HS256).build();
