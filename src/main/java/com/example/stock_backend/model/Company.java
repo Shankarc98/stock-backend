@@ -35,7 +35,7 @@ public class Company {
     public void setPrice(double price){
         this.price = price;
     }
-    public void setChange(double price){
+    public void setChange(double change){
         this.change = change; 
     }
     public void setDirection(int direction){

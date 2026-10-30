@@ -49,31 +49,39 @@ public class MarketService {
         List<Company> companies = cr.findAll();
 
         for(Company c : companies){
+            double previousPrice = c.getPrice();
             boolean fluctuate = random.nextBoolean();
 
             if(fluctuate){
                 boolean direction = random.nextBoolean();
 
                 if(direction){
-                    double change = random.nextFloat() * 2.13;
-                    c.setPrice(c.getPrice() + change);
-                    c.setChange(change);
-                    c.setDirection(1);
+                    c.setPrice(previousPrice + random.nextFloat() * 2.13);
                 }
                 else{
-                    double change = random.nextFloat() * 2.13;
-                    if(c.getPrice() >= 9.3){
-                        c.setPrice(c.getPrice() - change);
-                        c.setChange(change);
-                        c.setDirection(-1);
+                    double decrease = random.nextFloat() * 2.13;
+                    if(previousPrice >= 9.3){
+                        c.setPrice(previousPrice - decrease);
                     }
                 }
             }
-            else{
-                c.setDirection(0);
-                c.setChange(0);
-            }
+
+            updateMovement(c, previousPrice);
         }
         cr.saveAll(companies);
+    }
+
+    static void updateMovement(Company company, double previousPrice){
+        double change = company.getPrice() - previousPrice;
+        if(change > 0){
+            company.setChange(change);
+            company.setDirection(1);
+        } else if(change < 0){
+            company.setChange(Math.abs(change));
+            company.setDirection(-1);
+        } else {
+            company.setDirection(0);
+            company.setChange(0);
+        }
     }
 }
